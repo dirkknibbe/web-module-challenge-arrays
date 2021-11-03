@@ -63,8 +63,9 @@ Confirm that an array is exactly 31 flavors. Your function should accept:
 For Example: is31Flavors(originalFlavors) will return true if your code is working properly
 */
 
-
+// taking one pararm - its holding the place for an array
 function is31Flavors(/*your code here*/){
+  //conditional inside if its true return true else return false == it should be exactly 31 items
  /*your code here*/
 }
 
@@ -80,8 +81,10 @@ Use the addFlavor function below to do the following:
   For example: addFlavor(originalFlavors, "Rainbow Sherbert") should return the array ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"]
 */
 
-
+//recieve an array 2 params and a string which is the new flavor
 function addFlavor(/*your code here*/){
+  //use unshift to add the new flavor to the begginning of the recieved array
+  // return array
  /*your code here*/
 }
 
@@ -96,7 +99,9 @@ Use the removeLastFlavor function below to do the following:
 
   For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
-
+// recieve an array -- one param which is a place holder
+//remove the last item with pop
+//return array
 function removeLastFlavor(/*your code here*/){
  /*your code here*/
 }
@@ -113,9 +118,11 @@ Use the getFlavorByIndex function below to do the following:
 
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
-
+// two params array and number
+//
 function getFlavorByIndex(/*your code here*/){
   /*your code here*/
+  //array[0]
 }
 
 
@@ -133,7 +140,11 @@ Use the removeFlavorByName function below to do the following:
 
   HINT: You can use .splice() for this
 */
-
+//2 params an array and the string we want to remove
+//removing exact match
+//loop through tthe array and check every index for an exact match for the string if it exist remove useing splice
+// splice start and how many to delete
+//outside of loop return array
 function removeFlavorByName(/*your code here*/){
   /*your code here*/
 }
@@ -159,10 +170,22 @@ Use the filterByWord function below to do the following:
 
   DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
-
-function filterByWord(/*your code here*/){
-  /*your code here*/
+// two prarams one is array an then the string --- check to seee if that string is included
+//create a new array to push our results too
+//loops throught the provided array check every index
+//if index includes the string 
+//push to new array outside loop
+//return new array
+function filterByWord(array, string){
+  const filtered = [];
+  for(let i = 0; i< array.length; i++){
+    if(array[i].includes(string)){
+      filtered.push(array[i]);
+    }
+  }
+  return filtered;
 }
+console.log('task 7 ', filterByWord(originalFlavors, 'Chocolate'));
 
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
@@ -194,7 +217,7 @@ Use the getRandomFlavors function and new arrays below to do the following:
   For example: getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors) might return ["Strawberry Cheesecake", "Eggnog,"..."Chocolate"].
 */
 
-
+// unccoment the data and move above function
 function getRandomFlavors(/*code here*/){
   /*code here*/
 }
