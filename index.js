@@ -45,8 +45,10 @@ Use the copy function below to do the following:
   2. Return a copy of the received array  
 */
 
-function copy(/*your code here*/){
+function copy(array){
   /*your code here*/
+  let copy = [...array];
+  return array;
 }    
 
 
@@ -64,9 +66,11 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 // taking one pararm - its holding the place for an array
-function is31Flavors(/*your code here*/){
+function is31Flavors(array){
   //conditional inside if its true return true else return false == it should be exactly 31 items
  /*your code here*/
+ if(array.length === 31)
+ return true;
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -82,12 +86,14 @@ Use the addFlavor function below to do the following:
 */
 
 //recieve an array 2 params and a string which is the new flavor
-function addFlavor(/*your code here*/){
+function addFlavor(array, string){
   //use unshift to add the new flavor to the begginning of the recieved array
+  array.unshift(string)
+  return array;
   // return array
  /*your code here*/
 }
-
+addFlavor(originalFlavors, "Rainbow Sherbert")
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Houston, we have a problem! There are now 32 flavors in the originalFlavors array! Your task is to remove an item from the end of the array. 
@@ -102,10 +108,13 @@ Use the removeLastFlavor function below to do the following:
 // recieve an array -- one param which is a place holder
 //remove the last item with pop
 //return array
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+function removeLastFlavor(array){
+ array.pop()
+   return array;
+ 
 }
 
+console.log('task 4 ', removeLastFlavor(originalFlavors));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -120,11 +129,12 @@ Use the getFlavorByIndex function below to do the following:
 */
 // two params array and number
 //
-function getFlavorByIndex(/*your code here*/){
+function getFlavorByIndex(array, number){
   /*your code here*/
-  //array[0]
-}
 
+return array[number]  //array[0]
+}
+console.log('task 5 ', getFlavorByIndex(originalFlavors, 2));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, 
@@ -142,13 +152,20 @@ Use the removeFlavorByName function below to do the following:
 */
 //2 params an array and the string we want to remove
 //removing exact match
-//loop through tthe array and check every index for an exact match for the string if it exist remove useing splice
+//loop through the array and check every index for an exact match for the string if it exist remove using splice
 // splice start and how many to delete
 //outside of loop return array
-function removeFlavorByName(/*your code here*/){
+function removeFlavorByName(array, string){
   /*your code here*/
+  // const removedFlavor = [];
+  for(let i = 0; i < array.length; i++){
+    if(array[i] === (string)){
+        array.splice(i, 1);
+    }
+  }
+    return array;
 }
-
+console.log('task 6 ', removeFlavorByName(originalFlavors, 'Rocky Road'));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -178,7 +195,7 @@ Use the filterByWord function below to do the following:
 //return new array
 function filterByWord(array, string){
   const filtered = [];
-  for(let i = 0; i< array.length; i++){
+  for(let i = 0; i < array.length; i++){
     if(array[i].includes(string)){
       filtered.push(array[i]);
     }
